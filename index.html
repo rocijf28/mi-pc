@@ -107,6 +107,27 @@
   .item.pendiente::before { opacity: .4; }
   .item.pendiente .name { color: var(--muted); font-weight: 500; font-style: italic; }
 
+
+  /* Cards con foto: se abren en una ventanita */
+  .item[data-img] { cursor: pointer; }
+  .item[data-img]::after {
+    content: "Ver foto"; position: absolute; right: 12px; top: 12px; font-family: var(--marker); font-size: 12px;
+    color: var(--white); background: rgba(192, 52, 255, .55); border-radius: 20px; padding: 2px 10px;
+  }
+  .item[data-img]:focus-visible { outline: 2px solid var(--pink); outline-offset: 2px; }
+  dialog.foto {
+    border: 1px solid rgba(255, 77, 255, .55); border-radius: 14px; padding: 18px 18px 14px; color: var(--white);
+    background: rgba(10, 3, 20, .96); max-width: min(92vw, 640px); width: 100%;
+    box-shadow: 0 0 40px rgba(192, 52, 255, .4);
+  }
+  dialog.foto::backdrop { background: rgba(8, 3, 15, .78); }
+  dialog.foto img { display: block; width: 100%; max-height: 70vh; object-fit: contain; border-radius: 8px; background: #fff; }
+  dialog.foto p { margin: 12px 0 0; text-align: center; font-family: var(--marker); font-size: 18px; }
+  dialog.foto button {
+    position: absolute; top: 8px; right: 8px; width: 34px; height: 34px; border-radius: 50%; border: 0; cursor: pointer;
+    background: var(--white); color: var(--ink); font-size: 18px; line-height: 1; z-index: 1;
+  }
+
   .note {
     margin-top: 44px; padding: 14px 18px; border-radius: 10px; font-size: 14px; color: var(--text);
     border: 1px dashed rgba(255, 77, 255, .5); background: rgba(10, 3, 20, .7); position: relative; z-index: 1;
@@ -175,5 +196,26 @@
 
   <footer>· r0ciss 💜 ·</footer>
 </div>
+<dialog class="foto" id="foto" aria-label="Foto del producto">
+  <button type="button" id="foto-x" aria-label="Cerrar">✕</button>
+  <img id="foto-img" alt="">
+  <p id="foto-txt"></p>
+</dialog>
+<script>
+(function () {
+  var d = document.getElementById("foto"), im = document.getElementById("foto-img"), tx = document.getElementById("foto-txt");
+  function abrir(el) {
+    var n = el.querySelector(".name").textContent;
+    im.src = el.getAttribute("data-img"); im.alt = n; tx.textContent = n; d.showModal();
+  }
+  document.querySelectorAll(".item[data-img]").forEach(function (el) {
+    el.tabIndex = 0; el.setAttribute("role", "button");
+    el.addEventListener("click", function () { abrir(el); });
+    el.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); abrir(el); } });
+  });
+  document.getElementById("foto-x").addEventListener("click", function () { d.close(); });
+  d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
+})();
+</script>
 </body>
 </html>
