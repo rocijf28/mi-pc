@@ -41,17 +41,15 @@
   .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px 64px; position: relative; }
 
   /* Cabecera */
-  header { text-align: center; padding: 52px 0 26px; position: relative; z-index: 1; }
+  header { text-align: center; padding: 56px 0 26px; position: relative; z-index: 1; }
   .logo { display: block; width: min(260px, 60%); height: auto; margin: 0 auto; filter: drop-shadow(0 0 6px rgba(192, 52, 255, .3)); }
-  h1 {
-    display: inline-block; margin: 0; font-family: var(--display); font-weight: 400; letter-spacing: .07em;
-    font-size: clamp(46px, 11vw, 92px); line-height: 1.1; color: var(--white); text-transform: uppercase;
-    padding: 4px 40px 10px; background: var(--ink); border: 5px solid var(--pink);
-    transform: skewX(-8deg) rotate(-1.5deg); box-shadow: 8px 8px 0 var(--violet); text-shadow: 3px 3px 0 var(--purple);
+  h1 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } /* título oculto, solo para buscadores y lectores de pantalla */
+  .sub {
+    display: inline-block; margin: 0; padding: 14px 30px 16px; border-radius: 12px;
+    font-family: var(--marker); color: var(--white); font-size: clamp(20px, 4.6vw, 32px); line-height: 1.25;
+    background: rgba(10, 3, 20, .78); border: 1px solid rgba(192, 52, 255, .5);
+    box-shadow: 0 6px 22px rgba(0, 0, 0, .4);
   }
-  .sub { margin: 24px 0 0; font-family: var(--marker); color: var(--white); font-size: clamp(16px, 3.4vw, 22px);
-    text-shadow: 0 2px 8px rgba(8, 3, 15, .6); }
-
   /* Enlaces */
   .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 24px; }
   .links a {
@@ -157,7 +155,7 @@
 
   <header>
     <h1>Mi PC</h1>
-    <p class="sub">el setup con el que hago mis directos</p>
+    <p class="sub">El setup con el que hago mis directos</p>
     <nav class="links" aria-label="Mis redes">
       <a href="https://www.twitch.tv/r0ciss" target="_blank" rel="noopener">Twitch</a>
       <a href="https://www.tiktok.com/@rociss_" target="_blank" rel="noopener">TikTok</a>
