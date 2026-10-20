@@ -60,6 +60,12 @@
     box-shadow: 0 0 12px rgba(192, 52, 255, .35), inset 0 0 10px rgba(255, 77, 255, .15);
     transition: transform .2s, box-shadow .2s, border-color .2s;
   }
+  /* Frase que se escribe sola al entrar */
+  .sub .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .sub .pal { display: inline-block; white-space: nowrap; }
+  .sub .ch { position: relative; opacity: 0; }
+  .sub .ch.on { opacity: 1; }
+  .sub .ch.cur::after { content: ""; position: absolute; right: -3px; top: .12em; bottom: .12em; width: 3px; border-radius: 2px; background: var(--pink); }
   .links a:hover, .links a:focus-visible {
     transform: translateY(-2px) rotate(-1deg); border-color: var(--pink);
     box-shadow: 0 0 24px rgba(255, 77, 255, .65), inset 0 0 12px rgba(255, 77, 255, .25); outline: none;
@@ -234,6 +240,30 @@
   });
   document.getElementById("foto-x").addEventListener("click", function () { d.close(); });
   d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
+})();
+</script>
+<script>
+(function () {
+  var el = document.querySelector(".sub");
+  if (!el || (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+  var txt = el.textContent.trim(), chars = [];
+  el.textContent = "";
+  var sr = document.createElement("span"); sr.className = "sr"; sr.textContent = txt; el.appendChild(sr);
+  var vis = document.createElement("span"); vis.setAttribute("aria-hidden", "true"); el.appendChild(vis);
+  txt.split(" ").forEach(function (w, i, a) {
+    var p = document.createElement("span"); p.className = "pal";
+    w.split("").forEach(function (c) { var s = document.createElement("span"); s.className = "ch"; s.textContent = c; p.appendChild(s); chars.push(s); });
+    vis.appendChild(p);
+    if (i < a.length - 1) vis.appendChild(document.createTextNode(" "));
+  });
+  var k = 0;
+  function paso() {
+    if (k > 0) chars[k - 1].classList.remove("cur");
+    if (k >= chars.length) return;
+    chars[k].classList.add("on", "cur"); k++;
+    setTimeout(paso, 70);
+  }
+  setTimeout(paso, 500);
 })();
 </script>
 </body>
