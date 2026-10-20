@@ -128,14 +128,13 @@
 
   .ayuda { margin-top: 44px; text-align: center; position: relative; z-index: 1; }
   .ayuda a {
-    display: inline-block; color: var(--white); text-decoration: none; font-family: var(--marker); font-size: clamp(16px, 4vw, 20px);
-    padding: 14px 28px; border-radius: 12px;
-    background: #5a2a8c;
-    border: 3px solid var(--white);
-    box-shadow: 0 6px 22px rgba(0, 0, 0, .4);
-    transition: transform .2s, box-shadow .2s;
+    display: inline-block; text-decoration: none; font-family: "Sedgwick Ave Display", var(--marker); font-size: clamp(20px, 4.8vw, 28px); line-height: 1.2;
+    padding: 12px 30px 14px; border-radius: 40px; background: var(--white); color: #6a1fb0;
+    border: 3px solid var(--ink); box-shadow: 0 6px 18px rgba(0, 0, 0, .5);
+    transform: rotate(-2deg); transition: transform .2s, box-shadow .2s;
   }
-  .ayuda a:hover, .ayuda a:focus-visible { transform: translateY(-2px); background: #6b34a3; box-shadow: 0 8px 26px rgba(0, 0, 0, .5); outline: none; }
+  .ayuda svg { width: 1.1em; height: 1.1em; vertical-align: -.15em; margin-right: .45em; }
+  .ayuda a:hover, .ayuda a:focus-visible { transform: rotate(-2deg) translateY(-2px) scale(1.03); box-shadow: 0 10px 24px rgba(0, 0, 0, .55); outline: none; }
 
   .note {
     margin-top: 28px; padding: 14px 18px; border-radius: 10px; font-size: 14px; color: var(--text);
@@ -200,7 +199,7 @@
       </div>
     </section>
 
-    <div class="ayuda"><a href="https://streamlabs.com/r0ciss1/tip" target="_blank" rel="noopener">¿Te gustaría ayudarme a mejorar mi setup?</a></div>
+    <div class="ayuda"><a href="https://streamlabs.com/r0ciss1/tip" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.2 5.3L20 10l-5.8 1.7L12 17l-2.2-5.3L4 10l5.8-1.7z"/></svg>¿Te gustaría ayudarme a mejorar mi setup?</a></div>
 
     <p class="note">¿Dudas sobre alguna pieza? Pregúntame en el chat del directo o en mi Discord. Esta lista cambia cuando cambio de equipo.</p>
   </main>
