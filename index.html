@@ -45,10 +45,26 @@
   .logo { display: block; width: min(260px, 60%); height: auto; margin: 0 auto; filter: drop-shadow(0 0 6px rgba(192, 52, 255, .3)); }
   h1 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } /* título oculto, solo para buscadores y lectores de pantalla */
   .sub {
-    display: inline-block; margin: 0; padding: 14px 30px 16px; border-radius: 12px;
+    display: inline-block; margin: 8px 8px 0; padding: 16px 40px 18px; border-radius: 4px;
     font-family: "Sedgwick Ave Display", var(--marker); color: var(--white); font-size: clamp(22px, 5vw, 34px); line-height: 1.25;
-    background: rgba(10, 3, 20, .78); border: 1px solid rgba(192, 52, 255, .5);
-    box-shadow: 0 6px 22px rgba(0, 0, 0, .4);
+    background: rgba(10, 3, 20, .78); border: 2px solid var(--white);
+    outline: 2px solid var(--pink); outline-offset: 6px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, .55), 0 0 22px rgba(255, 77, 255, .55), inset 0 0 12px rgba(255, 77, 255, .3);
+    animation: neon 5s infinite;
+  }
+  @keyframes neon {
+    0%, 17%, 21%, 52%, 56%, 100% {
+      border-color: var(--white); outline-color: var(--pink);
+      box-shadow: 0 0 10px rgba(255, 255, 255, .55), 0 0 22px rgba(255, 77, 255, .55), inset 0 0 12px rgba(255, 77, 255, .3);
+    }
+    18%, 20%, 54% {
+      border-color: rgba(255, 255, 255, .35); outline-color: rgba(255, 77, 255, .25);
+      box-shadow: 0 0 3px rgba(255, 255, 255, .15), 0 0 6px rgba(255, 77, 255, .15), inset 0 0 4px rgba(255, 77, 255, .1);
+    }
+    19%, 55% {
+      border-color: var(--white); outline-color: var(--pink);
+      box-shadow: 0 0 14px rgba(255, 255, 255, .7), 0 0 30px rgba(255, 77, 255, .7), inset 0 0 14px rgba(255, 77, 255, .35);
+    }
   }
   /* Enlaces */
   .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 24px; }
