@@ -41,17 +41,18 @@
   .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px 64px; position: relative; }
 
   /* Cabecera */
-  header { text-align: center; padding: 44px 0 26px; position: relative; z-index: 1; }
+  header { text-align: center; padding: 78px 0 26px; position: relative; z-index: 1; }
   .logo {
-    display: block; width: min(440px, 82%); height: auto; margin: 0 auto;
-    filter: drop-shadow(0 0 10px rgba(192, 52, 255, .3));
+    position: absolute; left: 0; top: 18px; width: clamp(120px, 20vw, 200px); height: auto;
+    filter: drop-shadow(0 0 6px rgba(192, 52, 255, .3));
   }
   h1 {
-    margin: 10px 0 0; font-family: var(--marker); font-weight: 400; letter-spacing: .03em;
-    font-size: clamp(44px, 9vw, 76px); line-height: 1.1; color: var(--white); text-transform: uppercase;
-    text-shadow: 0 2px 10px rgba(8, 3, 15, .6);
+    display: inline-block; margin: 0; font-family: var(--display); font-weight: 400; letter-spacing: .07em;
+    font-size: clamp(46px, 11vw, 92px); line-height: 1.1; color: var(--white); text-transform: uppercase;
+    padding: 4px 40px 10px; background: var(--ink); border: 5px solid var(--pink);
+    transform: skewX(-8deg) rotate(-1.5deg); box-shadow: 8px 8px 0 var(--violet); text-shadow: 3px 3px 0 var(--purple);
   }
-  .sub { margin: 12px 0 0; font-family: var(--marker); color: var(--white); font-size: clamp(16px, 3.4vw, 22px);
+  .sub { margin: 24px 0 0; font-family: var(--marker); color: var(--white); font-size: clamp(16px, 3.4vw, 22px);
     text-shadow: 0 2px 8px rgba(8, 3, 15, .6); }
 
   /* Enlaces */
