@@ -79,8 +79,9 @@
   .ico {
     display: inline-flex; align-items: center; justify-content: center; flex: none;
     width: 1.75em; height: 1.75em; border-radius: 50%; background: var(--white);
-    font-size: .8em; line-height: 1; text-shadow: none; box-shadow: 0 2px 8px rgba(8, 3, 15, .35);
+    color: var(--violet); box-shadow: 0 2px 8px rgba(8, 3, 15, .35);
   }
+  .ico svg { width: 62%; height: 62%; display: block; }
   h2::after {
     content: ""; flex: 1; height: 2px; border-radius: 2px;
     background: linear-gradient(90deg, rgba(255, 255, 255, .85), rgba(192, 52, 255, .6) 60%, transparent);
@@ -170,7 +171,7 @@
 
   <main>
     <section aria-labelledby="pc">
-      <h2 id="pc"><span class="ico">🖥️</span>El PC</h2>
+      <h2 id="pc"><span class="ico" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="5" width="24" height="38" rx="4"/><path d="M19 13v22"/><circle cx="28" cy="13" r="2" fill="currentColor"/><path d="M26 31h5M26 36h5"/></svg></span>El PC</h2>
       <div class="grid">
         <div class="item"><div class="tag">Procesador</div><div class="name">AMD Ryzen 5 3600X</div><div class="det">6 núcleos</div></div>
         <div class="item"><div class="tag">Tarjeta gráfica</div><div class="name">NVIDIA GeForce RTX 5050</div></div>
@@ -184,13 +185,12 @@
     </section>
 
     <section aria-labelledby="perifericos">
-      <h2 id="perifericos"><span class="ico">🎧</span>Periféricos</h2>
+      <h2 id="perifericos"><span class="ico" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 28V24a15 15 0 0 1 30 0v4"/><rect x="7" y="27" width="8" height="13" rx="3.5" fill="currentColor"/><rect x="33" y="27" width="8" height="13" rx="3.5" fill="currentColor"/></svg></span>Periféricos</h2>
       <div class="grid">
         <div class="item"><div class="tag">Monitor 1</div><div class="name">Acer R240HY</div></div>
         <div class="item"><div class="tag">Monitor 2</div><div class="name">Philips 241V8</div></div>
         <div class="item"><div class="tag">Teclado</div><div class="name">Mars Gaming MK422</div><div class="det">Color blanco · Switch Marrón</div></div>
         <div class="item"><div class="tag">Ratón</div><div class="name">Mars Gaming MMPRO</div><div class="det">Color blanco</div></div>
-        <div class="item"><div class="tag">Alfombrilla</div><div class="name">Newskill Artemis</div><div class="det">Tamaño L · Color morado</div></div>
         <div class="item"><div class="tag">Auriculares</div><div class="name">Logitech G435 Lightspeed</div><div class="det">Inalámbricos · Color blanco</div></div>
         <div class="item"><div class="tag">Micrófono</div><div class="name">Trust Gaming GXT 258 Fyru</div><div class="det">Color blanco</div></div>
         <div class="item"><div class="tag">Webcam</div><div class="name">Logitech C920</div></div>
@@ -198,9 +198,10 @@
     </section>
 
     <section aria-labelledby="extra">
-      <h2 id="extra"><span class="ico">🎥</span>Extra</h2>
+      <h2 id="extra"><span class="ico" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l5.2 11 12 1.6-8.8 8.4 2.2 12L24 33.2 13.4 39l2.2-12L6.8 18.6 18.8 17z"/></svg></span>Extra</h2>
       <div class="grid">
         <div class="item"><div class="tag">Silla</div><div class="name">Stinger Station Alien Titanium v2.0</div><div class="det">Silla gaming · Color gris y azul</div></div>
+        <div class="item"><div class="tag">Alfombrilla</div><div class="name">Newskill Artemis</div><div class="det">Tamaño L · Color morado</div></div>
       </div>
     </section>
 
