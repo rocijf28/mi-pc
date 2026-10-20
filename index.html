@@ -128,8 +128,20 @@
     background: var(--white); color: var(--ink); font-size: 18px; line-height: 1; z-index: 1;
   }
 
+
+  .ayuda { margin-top: 44px; text-align: center; position: relative; z-index: 1; }
+  .ayuda a {
+    display: inline-block; color: var(--white); text-decoration: none; font-family: var(--marker); font-size: clamp(16px, 4vw, 20px);
+    padding: 14px 28px; border-radius: 12px;
+    background: linear-gradient(135deg, var(--violet), var(--purple));
+    border: 1px solid rgba(255, 255, 255, .6);
+    box-shadow: 0 6px 22px rgba(0, 0, 0, .4), 0 0 16px rgba(192, 52, 255, .4);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .ayuda a:hover, .ayuda a:focus-visible { transform: translateY(-2px); box-shadow: 0 8px 26px rgba(0, 0, 0, .45), 0 0 26px rgba(255, 77, 255, .6); outline: none; }
+
   .note {
-    margin-top: 44px; padding: 14px 18px; border-radius: 10px; font-size: 14px; color: var(--text);
+    margin-top: 28px; padding: 14px 18px; border-radius: 10px; font-size: 14px; color: var(--text);
     border: 1px dashed rgba(255, 77, 255, .5); background: rgba(10, 3, 20, .7); position: relative; z-index: 1;
   }
   footer { margin-top: 44px; text-align: center; font-family: var(--marker); font-size: 20px; color: var(--pink);
@@ -191,6 +203,8 @@
         <div class="item"><div class="tag">Silla</div><div class="name">Stinger Station Alien Titanium v2.0</div><div class="det">Silla gaming · Color gris y azul</div></div>
       </div>
     </section>
+
+    <div class="ayuda"><a href="https://streamlabs.com/r0ciss1/tip" target="_blank" rel="noopener">¿Te gustaría ayudarme a mejorar mi setup?</a></div>
 
     <p class="note">¿Dudas sobre alguna pieza? Pregúntame en el chat del directo o en mi Discord. Esta lista cambia cuando cambio de equipo.</p>
   </main>
